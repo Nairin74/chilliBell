@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cHilliBelL</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="chil.css">
+</head>
+
+<body>
+    <div class="whole">
+        <header id="header">
+            <nav id="navbar" class="flex">
+                <img src="img/chilly.png" alt="" id="logo" class="logoImg">
+                <span class="logoDeco">cHilliBelL</span>
+                <div class="wrap">
+                    <div class="search">
+                        <input class="left" type="text" placeholder="search your location for delivery">
+                        <button class="leftBtn btn"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+                <ul class="flex ">
+                    <li class="item"><a href="#">Home</a></li>
+                    <li class="item"><a href="#">Menu</a></li>
+                    <li class="item"><a href="#">Gallery</a></li>
+                    <li class="item"><a href="#">About</a></li>
+                    <li class="item"><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section id="coverPage">
+            <div class="container">
+
+            </div>
+        </section>
+        <section id="menuDish">
+            <div class="heading">
+                <h2 class="middle">Your cart</h2>
+            </div>
+            <table class="menu">
+
+                <tr>
+                    <th class="pxpy drop">Meals</th>
+                    <th class="pxpy drop">Custom Topping</th>
+                    <th class="pxpy drop">Item Price(Rs.)</th>
+                    <th class="pxpy drop">Item Quantity</th>
+                    <th class="pxpy drop">Item Total(Rs.)</th>
+
+                </tr>
+
+                <tr>
+                    <td class="pxpy"><img src="img/pizza1.png" alt="" style="width: 10vw; height: 20vh;"></td>
+                    <td class="pxpy"><select name="toppings" id="choose1" class="drop">
+                        <option value=""></option>
+                            <option value="onion">Onion</option>
+                            <option value="cheese">Cheese</option>
+                            <option value="corn">Corn</option>
+                        </select></td>
+                    <td class="pxpy"><input class="drop" value="210" id="sum1" type="number"></td>
+                    <td class="pxpy"><input class="drop" id="q1" type="number"></td>
+                    <td><span id="val1"></span></td>
+
+                    <!-- <td class="pxpy"><input class="drop" id="val1" type="number"></td> -->
+
+
+                </tr>
+                <tr>
+                    <td class="pxpy"><img src="img/pizza2.png" alt="" style="width: 10vw; height: 20vh;"></td>
+                    <td class="pxpy"><select name="toppings" id="choose2" class="drop">
+                        <option value=""></option>
+                            <option value="onion">Onion</option>
+                            <option value="cheese">Cheese</option>
+                            <option value="corn">Corn</option>
+                        </select></td>
+                    <td class="pxpy"><input class="drop" value="230" id="sum2" type="number"></td>
+                    <td class="pxpy"><input class="drop" id="q2" type="number"></td>
+                    <td><span id="val2"></span></td>
+
+                    <!-- <td class="pxpy"><input class="drop" id="val2" type="number"></td> -->
+
+
+                </tr>
+                <tr>
+                    <td class="pxpy"><img src="img/pizza3.png" alt="" style="width: 10vw; height: 20vh;"></td>
+                    <td class="pxpy"><select name="toppings" id="choose3" class="drop">
+                        <option value=""></option>
+                            <option value="onion">Onion</option>
+                            <option value="cheese">Cheese</option>
+                            <option value="corn">Corn</option>
+                        </select></td>
+                    <td class="pxpy"><input class="drop" value="180" id="sum3" type="number"></td>
+                    <td class="pxpy"><input class="drop" id="q3" type="number"></td>
+                    <td><span id="val3"></span></td>
+
+                    <!-- <td class="pxpy"><input class="drop" id="val3" type="number"></td> -->
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="pxpy"><label class="sub"> Subtotal: </label> </td>
+                    <td><span id="total"></span></td>
+                    <!-- <td class="pxpy"><input class="drop" id="total" type="number"></td> -->
+
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="pxpy"><button onclick="subtotal()" class="subBtn">Submit</button></td>
+                </tr>
+            </table>
+        </section>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function subtotal(){
+let sum1 = parseInt(document.getElementById("sum1").value);
+let sum2 = parseInt(document.getElementById("sum2").value);
+let sum3 = parseInt(document.getElementById("sum3").value);
+let q1 = parseInt(document.getElementById("q1").value);
+let q2 = parseInt(document.getElementById("q2").value);
+let q3 = parseInt(document.getElementById("q3").value);
+let val1 = parseInt(document.getElementById("val1").value);
+let val2 = parseInt(document.getElementById("val2").value);
+let val3 = parseInt(document.getElementById("val3").value);
+let choose1 = document.getElementById("choose1").value;
+let choose2 = document.getElementById("choose2").value;
+let choose3 = document.getElementById("choose3").value;
+let ans1 = 1
+let ans2 =1
+let ans3 =1
+switch(choose1){
+
+case "onion":
+ans1= document.getElementById("val1").innerHTML = parseInt((10 + sum1)*q1);
+break;
+case "cheese":
+ans1= document.getElementById("val1").innerHTML = parseInt((13 + sum1)*q1);
+break;
+case "corn":
+ans1= document.getElementById("val1").innerHTML = parseInt((20 + sum1)*q1);
+break;
+default:
+ans1= document.getElementById("val1").innerHTML = parseInt((0 + sum1)*q1);
+}
+
+switch(choose2){
+case "onion":
+ans2 =document.getElementById("val2").innerHTML = parseInt ((10 + sum2)*q2);
+break;
+case "cheese":
+ans2 =document.getElementById("val2").innerHTML =parseInt ((13 + sum2)*q2);
+break;
+case "corn":
+ans2 =document.getElementById("val2").innerHTML = parseInt0( (20 + sum2)*q2);
+break;
+default:
+ans2 =document.getElementById("val2").innerHTML =parseInt( sum2*q2);
+}
+
+switch(choose3){
+case "onion":
+ans3 = document.getElementById("val3").innerHTML = parseInt((10 + sum3)*q3);
+break;
+case "cheese":
+ans3 = document.getElementById("val3").innerHTML =parseInt ((13 + sum3)*q3);
+break;
+case "corn":
+  ans3 = document.getElementById("val3").innerHTML = parseInt((20 + sum3)*q3);
+  
+break;
+default:
+ans3 = document.getElementById("val3").innerHTML =parseInt( sum3*q3);
+}
+
+
+ let ans = ans1 + ans2 + ans3;
+console.log(ans)
+ document.getElementById("total").innerHTML = ans
+
+    }
+
+
+</script>
